@@ -26,6 +26,9 @@ public interface TextBlock {
    */
   public int width();
 
+  /**
+   * Checks to see if this block is equivalent to another block
+   */
   public boolean eqv(TextBlock other);
 
 } // interface TextBlock

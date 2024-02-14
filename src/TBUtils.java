@@ -81,6 +81,9 @@ public class TBUtils {
     return false;
   }
 
+  /**
+   * Checks to see if t1 is equivalent to another t2
+   */
   public static boolean eqv(TextBlock t1, TextBlock t2) {
     return t1.eqv(t2);
   }

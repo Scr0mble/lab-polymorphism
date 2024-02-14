@@ -64,6 +64,9 @@ public class BoxedBlock implements TextBlock {
     return 2 + this.contents.width();
   } // width()
 
+  /**
+   * Checks to see if this block is equivalent to another block
+   */
   public boolean eqv(TextBlock other) {
     return (other instanceof BoxedBlock) &&
         (this.contents.eqv(((BoxedBlock) other).contents));

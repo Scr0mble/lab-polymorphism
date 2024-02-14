@@ -55,6 +55,9 @@ public class TextLine implements TextBlock {
     return this.line.length();
   } // width()
 
+  /**
+   * Checks to see if this block is equivalent to another block
+   */
   public boolean eqv(TextBlock other) {
     if (other instanceof TextLine) {
       return (line.equals(((TextLine)other).line));
