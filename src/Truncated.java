@@ -1,17 +1,17 @@
 public class Truncated implements TextBlock {
-/* Fields */
+  /* Fields */
 
   TextBlock contents;
   int restrict;
 
-/* Constructors */
+  /* Constructors */
 
   public Truncated(TextBlock _contents, int _restrict) {
     this.contents = _contents;
     this.restrict = _restrict;
   }
 
-/* Methods */
+  /* Methods */
 
   public String row(int i) throws Exception {
     int w = this.contents.width();
@@ -20,7 +20,7 @@ public class Truncated implements TextBlock {
       System.err.println("Restrict is larger than the width.");
     }
 
-    return ("|" + this.contents.row(i) + "|").substring(0, this.restrict);
+    return (this.contents.row(i)).substring(0, this.restrict);
   }
 
   public int height() {
@@ -30,4 +30,10 @@ public class Truncated implements TextBlock {
   public int width() {
     return this.contents.width();
   } // width()
+
+  public boolean eqv(TextBlock other) {
+    return (other instanceof Truncated) &&
+        (this.contents.eqv(((Truncated) other).contents));
+  }
+
 }

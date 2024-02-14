@@ -84,4 +84,10 @@ public class VComposition implements TextBlock {
     return Math.max(this.top.width(), this.bottom.width());
   } // width()
 
+  public boolean eqv(TextBlock other) {
+    return (other instanceof VComposition) &&
+        (this.top.eqv(((VComposition) other).top) &&
+            (this.bottom.eqv(((VComposition) other).bottom)));
+  } // eqv(TextBlock)
+
 } // class VComposition
